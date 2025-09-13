@@ -1,12 +1,25 @@
-# React + Vite
+# Music Library App
+A simple music library app built with React, TailwindCSS, and the iTunes Search API. Users can search for songs, albums and view album covers.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features
+Search Bar - search song/albums from the API.
+Album Grid - display album covers, titles, and artists.
+Responsive Design - works across desktop and mobile.
+Collapsible Sidebar - toggle between expanded and compact navigation.
 
-Currently, two official plugins are available:
+# Tech Stack
+Frontend: React, Vite.
+Styling: Tailwind CSS.
+API: iTunes Search API.
+HTTP Client: Axios.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Usage
+Type an artist’s name (e.g., J cole) in the search bar.
 
-## Expanding the ESLint configuration
+See songs in the dropdown.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Albums appear in the main Albums grid below.
+
+Collapse/expand the sidebar with the menu button.
+
+# Host
