@@ -18,7 +18,7 @@ function Body() {
       setLoading(true);
       try {
         const response = await axios.get("https://itunes.apple.com/search", {
-          params: { term: query, entity: "album", limit: 10 },
+          params: { term: query, entity: "album", limit: 10},
         });
         setAlbums(response.data.results);
       } catch (err) {
