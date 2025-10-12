@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "Hollywood's Bleeding",
+        "artist": "Post Malone",
+        "cover": ""
+    },
+    {
+        "id": 2,
+        "title": "I, Carrion",
+        "artist": "Hozier",
+        "cover": ""
+    },
+    {
+        "id": 3,
+        "title": "Die Hard",
+        "artist": "Kendrick Lamar",
+        "cover": ""
+    },
+    {
+        "id": 4,
+        "title": "PATTERNS",
+        "artist": "Chelan, NNAVY",
+        "cover": ""
+    },
+    {
+        "id": 5,
+        "title": "Take Me to Church",
+        "artist": "Hozier",
+        "cover": ""
+    },
+    {
+        "id": 6,
+        "title": "dirty dancer",
+        "artist": "Orion Sun",
+        "cover": ""
+    },
+    {
+        "id": 7,
+        "title": "Dive",
+        "artist": "Olivia Dean",
+        "cover": ""
+    },
+    {
+        "id": 8,
+        "title": "Free Mind",
+        "artist": "Tems",
+        "cover": ""
+    }
+]

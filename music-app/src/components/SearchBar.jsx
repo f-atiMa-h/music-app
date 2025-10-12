@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-function SearchBar({ query, setQuery }) {
-  const [results, setResults] = useState([]); 
-  const [loading, setLoading] = useState(false);  
-  const [error, setError] = useState(null); 
-  const [open, setOpen] = useState(false); 
+function SearchBar() {
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (!query) {
@@ -48,13 +49,13 @@ function SearchBar({ query, setQuery }) {
           onFocus={() => setOpen(true)}
           onBlur={() => setOpen(false)}
           placeholder="Search songs..."
-          className="w-full px-3 py-2 border-2 border-[#30292f] rounded-xl outline-none "
+          className="w-full px-3 py-2 border-2 border-[#C5A25A] text-[#A0A0A0] rounded-xl outline-none "
         />
 
         {/* Dropdown results */}
         {open && query && (
-          <div className="absolute left-0 right-0 mt-2 bg-white border border-gray-300 rounded-xl shadow-lg z-50">
-            {loading && <p className="p-2 text-gray-500">Loading...</p>}
+          <div className="absolute left-0 right-0 mt-2 bg-white border border-gray-[#C5A25A] rounded-xl shadow-lg z-50">
+            {loading && <p className="p-2 text-[#A0A0A0]">Loading...</p>}
             {error && <p className="p-2 text-red-500">{error}</p>}
 
             <ul className="max-h-64 overflow-y-auto">
@@ -62,11 +63,12 @@ function SearchBar({ query, setQuery }) {
                 <li
                   key={track.trackId}
                   className="flex items-center gap-3 p-2 hover:bg-gray-100 cursor-pointer"
-                  onMouseDown={() => {
-                    // update the search bar and parent Body when clicking a song
+                  onMouseDown={(e) => {
+                    e.preventDefault(); // keeps it open long enough to register
                     setQuery(track.artistName);
                     setOpen(false);
                   }}
+
                 >
                   <img
                     src={track.artworkUrl60}
@@ -75,13 +77,13 @@ function SearchBar({ query, setQuery }) {
                   />
                   <div>
                     <p className="font-medium">{track.trackName}</p>
-                    <p className="text-sm text-gray-600">{track.artistName}</p>
+                    <p className="text-sm text-[#A0A0A0]">{track.artistName}</p>
                   </div>
                 </li>
               ))}
 
               {results.length === 0 && !loading && (
-                <p className="p-2 text-gray-500">No results found</p>
+                <p className="p-2 text-[#A0A0A0]">No results found</p>
               )}
             </ul>
           </div>

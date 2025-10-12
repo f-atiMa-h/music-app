@@ -1,100 +1,92 @@
-import { React, useState } from "react";
-import { IoHomeOutline } from "react-icons/io5";
-import { IoMenuSharp } from "react-icons/io5";
+import { useState } from "react";
+import {
+  IoHomeOutline,
+  IoMenuSharp,
+  IoAlbums,
+  IoMusicalNotesOutline,
+  IoPersonOutline,
+} from "react-icons/io5";
 import { TbVinyl } from "react-icons/tb";
 import { FaMicrophoneAlt } from "react-icons/fa";
-import { IoAlbums } from "react-icons/io5";
-import { IoMusicalNotesOutline } from "react-icons/io5";
-import { IoPersonOutline } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 
 export default function Navbar() {
+  const [toggle, setToggle] = useState(true); // start open for clarity
 
-    const [toggle, setToggle] = useState(true);
-
-
-
-    return (
-        <>
-        <div className="flex flex-col items-start">
-        {/* PROFILE */}
-        <div className="py-5 px-6 text-xl flex items-center gap-3 text-[#3a3439] font-semibold">
+  return (
+    <div className="flex min-h-screen bg-[#121212] text-white transition-all duration-300">
+      {/* ===== SIDEBAR ===== */}
+      <aside
+        className={`transition-all duration-300 overflow-hidden bg-[#121214] ${
+          toggle ? "w-60" : "w-16"
+        }`}
+      >
+        {/* Profile */}
+        <div className="py-5 px-4 text-xl flex items-center gap-3 text-[#E6E6E6] font-semibold">
           <IoPersonOutline />
-          <p>Hello Kale!</p>
+          {toggle && <p>Hello Kale!</p>}
         </div>
 
-        <div className="flex">
-          {/* SIDEBAR */}
-          <div
-            className={`bg-[#30292f] rounded h-lvh transition-all duration-300 ${
-              toggle ? "w-60" : "w-20"
-            }`}
+        <section className="flex flex-col tracking-tight">
+          {/* Toggle button */}
+          <button
+            onClick={() => setToggle(!toggle)}
+            className="flex items-center gap-3 text-2xl font-semibold px-4 pt-4 mb-6"
           >
-            <section className="flex flex-col tracking-tight">
-              {/* Toggle button */}
-              <button
-                onClick={() => setToggle(!toggle)}
-                className="flex items-center gap-3 text-2xl font-semibold px-5 pt-4 mb-6"
-              >
-                <IoMenuSharp />
-                {toggle && <span className="text-gray-200">Library</span>}
-              </button>
+            <IoMenuSharp
+              className={`${toggle ? "text-gray-200" : "text-[#EAEAEA]"}`}
+            />
+            {toggle && <span className="text-[#E6E6E6]">Library</span>}
+          </button>
 
-              {/* Nav items */}
-              {toggle && (
-                <>
-                  <nav>
-                    <ul className="flex flex-col gap-6 px-3 text-gray-400">
-                      <li className="flex items-center gap-2">
-                        <IoHomeOutline />
-                        <a href="#">HOME</a>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <TbVinyl />
-                        <a href="#">RECENTLY ADDED</a>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <FaMicrophoneAlt />
-                        <a href="#">ARTISTS</a>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <IoAlbums />
-                        <a href="#">ALBUMS</a>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <IoMusicalNotesOutline />
-                        <a href="#">SONGS</a>
-                      </li>
-                    </ul>
-                  </nav>
+          {/* Navigation */}
+          <nav>
+            <ul className="flex flex-col gap-6 px-3 text-[#A0A0A0]">
+              <li className="flex items-center gap-2 hover:text-[#FFFFFF] transition-colors duration-200">
+                <IoHomeOutline />
+                {toggle && <a href="/">HOME</a>}
+              </li>
+              <li className="flex items-center gap-2 hover:text-[#FFFFFF] transition-colors duration-200">
+                <FaMicrophoneAlt />
+                {toggle && <a href="/artist">ARTISTS</a>}
+              </li>
+              <li className="flex items-center gap-2 hover:text-[#FFFFFF] transition-colors duration-200">
+                <IoAlbums />
+                {toggle && <a href="/albums">ALBUMS</a>}
+              </li>
+              <li className="flex items-center gap-2 hover:text-[#FFFFFF] transition-colors duration-200">
+                <IoMusicalNotesOutline />
+                {toggle && <a href="/songs">SONGS</a>}
+              </li>
+            </ul>
+          </nav>
 
-                  {/* Playlists dropdown */}
-                  <details className="bg-[#30292f] p-2 rounded mt-4">
-                    <summary className="cursor-pointer list-none flex items-center gap-2 text-xl text-gray-200 font-semibold px-5">
-                      PLAYLISTS
-                      <IoIosArrowDown />
-                    </summary>
-                    <nav className="flex flex-col mt-4 gap-4">
-                      <a href="#" className="hover:bg-gray-200 p-2 rounded tracking-tight text-gray-400">
-                        PLAYLIST 1
-                      </a>
-                      <a href="#" className="hover:bg-gray-200 p-2 rounded tracking-tight text-gray-400">
-                        PLAYLIST 2
-                      </a>
-                      <a href="#" className="hover:bg-gray-200 p-2 rounded tracking-tight text-gray-400">
-                        FAVORITES
-                      </a>
-                      <a href="#" className="hover:bg-gray-200 p-2 rounded tracking-tight text-gray-400">
-                        MADE FOR YOU
-                      </a>
-                    </nav>
-                  </details>
-                </>
-              )}
-            </section>
-          </div>
-        </div>
-      </div>
-        </>
-    );
+          {/* Playlists */}
+          {toggle && (
+            <details className="bg-[#121214] p-2 rounded mt-4">
+              <summary className="cursor-pointer list-none flex items-center gap-2 text-xl text-[#EAEAEA] font-semibold px-5">
+                PLAYLISTS
+                <IoIosArrowDown />
+              </summary>
+              <nav className="flex flex-col mt-4 gap-4">
+                {["PLAYLIST 1", "PLAYLIST 2", "FAVORITES", "MADE FOR YOU"].map(
+                  (item) => (
+                    <a
+                      key={item}
+                      href="#"
+                      className="hover:text-[#FFFFFF] p-2 rounded tracking-tight text-[#A0A0A0] transition-colors duration-200"
+                    >
+                      {item}
+                    </a>
+                  )
+                )}
+              </nav>
+            </details>
+          )}
+        </section>
+      </aside>
+
+      
+    </div>
+  );
 }

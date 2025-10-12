@@ -5,7 +5,8 @@ import axios from "axios";
 function Body() {
   const [query, setQuery] = useState("");
   const [albums, setAlbums] = useState([]);
-  const [loading, setLoading] = useState(false); // start false
+  const [loading, setLoading] = useState(false); 
+  
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -33,12 +34,12 @@ function Body() {
 
   return (
     <div className="w-screen min-h-screen ">
-      {/* Search bar at top-right */}
+       {/* Search bar  */}
       <div className="flex flex-col items-end p-4">
         <SearchBar query={query} setQuery={setQuery} />
       </div>
 
-      {/* Album Grid */}
+      {/* Grid */}
       <div className="p-6">
         <h2 className="text-2xl font-bold mb-4 text-[#3a3439]">Albums</h2>
 

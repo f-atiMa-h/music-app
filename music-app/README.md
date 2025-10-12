@@ -12,6 +12,7 @@ Frontend: React, Vite.
 Styling: Tailwind CSS.
 API: iTunes Search API.
 HTTP Client: Axios.
+React router: navigate pages
 
 # Usage
 Type an artist’s name (e.g., J cole) in the search bar.
@@ -23,3 +24,4 @@ Albums appear in the main Albums grid below.
 Collapse/expand the sidebar with the menu button.
 
 # Host
+{https://music-app-gamma-snowy.vercel.app/}
