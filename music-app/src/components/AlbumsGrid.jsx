@@ -12,7 +12,7 @@ const AlbumsGrid = () => {
                 setLoading(true);
                 setError(null);
 
-                // You can use any genre or keyword (like “pop”, “rap”, “r&b”, etc.)
+                
                 const randomGenre = ["pop", "rnb", "afrobeats", "rap"][
                     Math.floor(Math.random() * 3)
                 ];
@@ -23,7 +23,7 @@ const AlbumsGrid = () => {
                         params: {
                             term: randomGenre,
                             entity: "album",
-                            limit: 8, // fetch 20 artists
+                            limit: 8, 
                         },
                     }
                 );

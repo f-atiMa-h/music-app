@@ -38,7 +38,7 @@ function SearchBar() {
   return (
     <div className="p-4 flex justify-end">
       <div className="relative w-full max-w-md sm:w-96">
-        {/* Search input */}
+       
         <input
           type="text"
           value={query}
@@ -52,7 +52,7 @@ function SearchBar() {
           className="w-full px-3 py-2 border-2 border-[#C5A25A] text-[#A0A0A0] rounded-xl outline-none "
         />
 
-        {/* Dropdown results */}
+        {/* Dropdown */}
         {open && query && (
           <div className="absolute left-0 right-0 mt-2 bg-white border border-gray-[#C5A25A] rounded-xl shadow-lg z-50">
             {loading && <p className="p-2 text-[#A0A0A0]">Loading...</p>}
@@ -64,7 +64,7 @@ function SearchBar() {
                   key={track.trackId}
                   className="flex items-center gap-3 p-2 hover:bg-gray-100 cursor-pointer"
                   onMouseDown={(e) => {
-                    e.preventDefault(); // keeps it open long enough to register
+                    e.preventDefault(); 
                     setQuery(track.artistName);
                     setOpen(false);
                   }}

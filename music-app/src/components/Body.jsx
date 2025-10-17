@@ -55,14 +55,14 @@ function Body() {
               key={album.collectionId}
               className="bg-[#3a3439] p-3 rounded-xl shadow hover:shadow-lg transition"
             >
-              {/* Album cover */}
+              {/* cover */}
               <img
                 src={album.artworkUrl100.replace("100x100", "300x300")}
                 alt={album.collectionName}
                 className="w-full rounded-lg mb-2"
               />
 
-              {/* Album info */}
+              {/*info */}
               <h3 className="text-gray-200 font-semibold truncate">
                 {album.collectionName}
               </h3>

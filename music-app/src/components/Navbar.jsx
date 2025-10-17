@@ -6,29 +6,29 @@ import {
   IoMusicalNotesOutline,
   IoPersonOutline,
 } from "react-icons/io5";
-import { TbVinyl } from "react-icons/tb";
+
 import { FaMicrophoneAlt } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 
 export default function Navbar() {
-  const [toggle, setToggle] = useState(true); // start open for clarity
+  const [toggle, setToggle] = useState(false); 
 
   return (
     <div className="flex min-h-screen bg-[#121212] text-white transition-all duration-300">
-      {/* ===== SIDEBAR ===== */}
+      {/* SIDEBAR*/}
       <aside
         className={`transition-all duration-300 overflow-hidden bg-[#121214] ${
           toggle ? "w-60" : "w-16"
         }`}
       >
-        {/* Profile */}
+        {/* PRofile*/}
         <div className="py-5 px-4 text-xl flex items-center gap-3 text-[#E6E6E6] font-semibold">
           <IoPersonOutline />
           {toggle && <p>Hello Kale!</p>}
         </div>
 
         <section className="flex flex-col tracking-tight">
-          {/* Toggle button */}
+          
           <button
             onClick={() => setToggle(!toggle)}
             className="flex items-center gap-3 text-2xl font-semibold px-4 pt-4 mb-6"
@@ -39,7 +39,7 @@ export default function Navbar() {
             {toggle && <span className="text-[#E6E6E6]">Library</span>}
           </button>
 
-          {/* Navigation */}
+         
           <nav>
             <ul className="flex flex-col gap-6 px-3 text-[#A0A0A0]">
               <li className="flex items-center gap-2 hover:text-[#FFFFFF] transition-colors duration-200">
@@ -61,7 +61,7 @@ export default function Navbar() {
             </ul>
           </nav>
 
-          {/* Playlists */}
+          
           {toggle && (
             <details className="bg-[#121214] p-2 rounded mt-4">
               <summary className="cursor-pointer list-none flex items-center gap-2 text-xl text-[#EAEAEA] font-semibold px-5">

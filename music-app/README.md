@@ -24,4 +24,7 @@ Albums appear in the main Albums grid below.
 Collapse/expand the sidebar with the menu button.
 
 # Host
-{https://music-app-gamma-snowy.vercel.app/}
+N/A
+
+# Github
+https://github.com/f-atiMa-h/music-app.git
